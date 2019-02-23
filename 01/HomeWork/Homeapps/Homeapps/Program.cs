@@ -7,7 +7,7 @@ namespace Homeapps
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите имя");
+            Console.WriteLine("Введите имя: ");
             string name = Console.ReadLine();
             Thread.Sleep(5000);
             Console.WriteLine($"Приветствую, {name}!");
