@@ -7,43 +7,23 @@ namespace CalculatorPro
         static void Main(string[] args)
         {
             Console.WriteLine("Введите первое число: ");
-            float a = float.Parse(Console.ReadLine());
+            double a = double.Parse(Console.ReadLine());
             Console.WriteLine("Введите второе число: ");
-            float b = float.Parse(Console.ReadLine());
+            double b = double.Parse(Console.ReadLine());
             Console.WriteLine("Введите одно из предложенных математических действий (+, -, *, /, %, ^): ");
             char x = Convert.ToChar(Console.ReadLine());
+            double result;
 
-            switch (x) // решение с помощью оператора Switch
-            {
-                case '+': Console.WriteLine("Результат математичекого вычисления a + b = {0}", a + b);
-                    break;
-                case '-': Console.WriteLine("Результат математичекого вычисления a - b = {0}", a - b);
-                    break;
-                case '*': Console.WriteLine("Результат математичекого вычисления a * b = {0}", a * b);
-                    break;
-                case '/': Console.WriteLine("Результат математичекого вычисления a / b = {0}", a / b);
-                    break;
-                case '%': Console.WriteLine("Результат математичекого вычисления a % b = {0}", a % b);
-                    break;
-                case '^': Console.WriteLine("Результат математичекого вычисления a ^ b = {0}", +Math.Pow(a, b));
-                    break;
-            }
+            if (x == '+') result = a + b;
+            else if (x == '-') result = a - b;
+            else if (x == '*') result = a * b;
+            else if (x == '/') result = a / b;
+            else if (x == '%') result = a % b;
+            else if (x == '^') result = +Math.Pow(a, b);
+            else result = ' ';
 
-
-
-            //if (x == '+') // решение с помощью оператора if
-            //    Console.WriteLine("Результат математичекого вычисления a + b = {0}", a + b);
-            //else if (x == '-')
-            //    Console.WriteLine("Результат математичекого вычисления a - b = {0}", a - b);
-            //else if (x == '*')
-            //    Console.WriteLine("Результат математичекого вычисления a * b = {0}", a * b);
-            //else if (x == '/')
-            //    Console.WriteLine("Результат математичекого вычисления a / b = {0}", a / b);
-            //else if (x == '%')
-            //    Console.WriteLine("Результат математичекого вычисления a % b = {0}", a % b);
-            //else if (x == '^')
-            //    Console.WriteLine("Результат математичекого вычисления a ^ b = {0}", +Math.Pow(a, b));
-
+            if (result == ' ') Console.WriteLine("Введено некорректное математическое действие");
+            else Console.WriteLine($"Результат математических вычислений: {a} {x} {b} = {result}");
 
             Console.ReadKey();
         }
