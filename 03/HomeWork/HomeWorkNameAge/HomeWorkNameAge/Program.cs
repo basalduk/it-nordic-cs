@@ -7,7 +7,7 @@ namespace HomeWorkNameAge
         static void Main(string[] args)
         {
             var name = new string[3];
-            var age = new string[3];
+            var age = new int[3];
             Console.WriteLine("Enter the names of 3 people: ");
             for (int i = 0; i < name.Length; i++)
             {
@@ -16,7 +16,7 @@ namespace HomeWorkNameAge
             Console.WriteLine("Enter the age of these people: ");
             for (int i = 0; i < age.Length; i++)
             {
-                age[i] = Console.ReadLine();
+                age[i] = Int32.Parse(Console.ReadLine())+4;
             }
             for (int i = 0; i < name.Length; i++)
             {
