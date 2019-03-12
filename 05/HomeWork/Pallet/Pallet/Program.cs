@@ -6,9 +6,8 @@ namespace Pallet
     {
         [Flags]
 
-        enum collor : byte
+        enum Mycolor 
         {
-            Non = 0x0,
             Blue=0x1,
             Cyan = 0x1 << 1,
             Grey = 0x1 << 2,
@@ -17,30 +16,39 @@ namespace Pallet
             Red = 0x1 << 5,
             White = 0x1 << 6,
             Yellow = 0x1 << 7,
+            Black = 0x1 <<8
         }
         static void Main(string[] args)
         {
-            
 
-                Console.WriteLine("Введите цвет №1 (Blue, Cyan, Grey, Green, Magenta, Red, White, Yellow):");
-                collor LikeCollor = (collor)Enum.Parse(typeof(collor), Console.ReadLine());
+            Mycolor likeColors = (Mycolor)0;
+            Mycolor allColors = (Mycolor)511;
+            Console.WriteLine("Имеется палитра цветов: Blue, Cyan, Grey, Green, Magenta, Red, White, Yellow, Black");
+            for (int i = 1; i < 5; i++)
+            {
+                while (true)
+                { object color;
+                    Console.Write($"Введите любимый цвет {i}\n");
+                    if (Enum.TryParse(
+                        typeof(Mycolor),
+                        Console.ReadLine(),
+                        true,
+                        out color))
+                    {
+                        likeColors |= (Mycolor)color;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ошибка!");
+                    }
+                }
+            }
 
-                Console.WriteLine("Введите цвет №2 (Blue, Cyan, Grey, Green, Magenta, Red, White, Yellow):");
-                collor LikeCollor2 =  LikeCollor | (collor)Enum.Parse(typeof(collor), Console.ReadLine());
-
-                Console.WriteLine("Введите цвет №3 (Blue, Cyan, Grey, Green, Magenta, Red, White, Yellow):");
-                collor LikeCollor3 = LikeCollor2 | (collor)Enum.Parse(typeof(collor), Console.ReadLine());
-
-                Console.WriteLine("Введите цвет №4 (Blue, Cyan, Grey, Green, Magenta, Red, White, Yellow):");
-                collor LikeCollor4 = LikeCollor3 | (collor)Enum.Parse(typeof(collor), Console.ReadLine());
-
-
-                Console.WriteLine($"Избранные цвета: {LikeCollor4}");
-                collor unLike = ~LikeCollor4;
-                Console.WriteLine($"Цвета невошедшие в Избранное: {unLike}");
-
-
-
+            Console.WriteLine($"Избранные цвета: {likeColors}");
+            Mycolor unLikeColors = (Mycolor) allColors^likeColors;
+            Console.WriteLine($"Цвета невошедшие в Избранное: {unLikeColors}");
+            Console.ReadKey();
         }
     }
 }
