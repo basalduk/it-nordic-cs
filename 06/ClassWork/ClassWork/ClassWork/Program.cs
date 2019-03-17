@@ -6,35 +6,7 @@ namespace ClassWork
 	{
 		static void Main(string[] args)
 		{
-            //Console.WriteLine("Введите строку");
 
-            //do
-            //{
-            //	string a;
-            //	a = Console.ReadLine();
-
-            //	if (a == "exit")
-            //	{
-            //		break;
-            //	};
-
-            //	if (a.Length > 15)
-            //	{
-            //		Console.WriteLine("Символов больше 15");
-            //		continue;
-            //	}
-            //	Console.WriteLine($"Количество символов {a.Length}");
-            //}
-            //while (true);
-
-            //int[] mass = { 1, 2, 3, 3, 4};
-            //int i=0;
-            //int sum=0;
-            //while (i<mass.Length)
-            //{
-            //	sum += mass[i];
-            //	Console.WriteLine($"result {sum}");
-            //	i++;
             var marks = new[]
             {
 				new[] { 2, 3, 3, 2, 3 },
