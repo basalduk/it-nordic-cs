@@ -13,11 +13,13 @@ namespace morning
             };
             ReminderItem reminderItem2 = new ReminderItem
             {
-                AlarmDate = DateTimeOffset.Parse("01/04/2019 14:00:00"),
+                AlarmDate = DateTimeOffset.Parse("01/04/2019 20:00:00"),
                 AlarmMessage = "dinner"
             };
-            
+			reminderItem1.WriteProperties();
+			reminderItem2.WriteProperties();
 
+			Console.ReadKey();
         }
 
 

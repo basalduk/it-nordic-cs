@@ -19,14 +19,18 @@ namespace morning
 
         public bool IsOutdated ()
         {
-            return true;
+			//bool isOutdated;
+			//AlarmDate < DateTimeOffset.Now
+			//? isOutdated = true
+			//: isOutdated = false;
+			return true;
+					
         }
-        public string WriteProperties
-        {
-            get
-            {
-                return $"AlarmDate: {AlarmDate}\n AlarmMessage: {AlarmMessage}\n TimeToAlarm: {TimeToAlarm}\n IsOutdated: {IsOutdated}";
-            }
+		public void WriteProperties()
+		{
+
+			Console.WriteLine($"AlarmDate: {AlarmDate}\n AlarmMessage: {AlarmMessage}\n TimeToAlarm: {TimeToAlarm}\n ");
+
         }
 
     }
