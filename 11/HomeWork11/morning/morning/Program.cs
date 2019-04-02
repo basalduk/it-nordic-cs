@@ -6,24 +6,20 @@ namespace morning
     {
         static void Main(string[] args)
         {
-            ReminderItem reminderItem1 = new ReminderItem
+            var reminderItem1 = new ReminderItem
             {
-                AlarmDate = DateTimeOffset.Parse("01/04/2019 08:00:00"),
+                AlarmDate = DateTimeOffset.Parse("02/04/2019 06:00:00"),
                 AlarmMessage = "morning"
             };
-            ReminderItem reminderItem2 = new ReminderItem
+            var reminderItem2 = new ReminderItem
             {
-                AlarmDate = DateTimeOffset.Parse("01/04/2019 20:00:00"),
-                AlarmMessage = "dinner"
+                AlarmDate = DateTimeOffset.Parse("02/04/2019 22:00:00"),
+                AlarmMessage = "supper"
             };
 			reminderItem1.WriteProperties();
 			reminderItem2.WriteProperties();
 
 			Console.ReadKey();
         }
-
-
     }
-
-
 }
