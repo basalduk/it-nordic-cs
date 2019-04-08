@@ -13,8 +13,7 @@ namespace morning
         {
             get
             {
-                TimeSpan timeToAlarm = AlarmDate - DateTimeOffset.UtcNow;
-                return timeToAlarm;
+                return AlarmDate - DateTimeOffset.UtcNow;
             }
         }
 
@@ -23,21 +22,16 @@ namespace morning
             get
             {
                 int isOutdated = Convert.ToInt32( Math.Floor(TimeToAlarm.TotalSeconds));
-                if (isOutdated >= 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
+                return isOutdated >= 0;
             }
-
         }
 		public void WriteProperties()
 		{
-            Console.WriteLine($"AlarmDate: {AlarmDate}\n AlarmMessage: {AlarmMessage}\n TimeToAlarm: {TimeToAlarm}\n IsOutdated: {IsOutdated}");
+            Console.WriteLine(
+                $"AlarmDate: {AlarmDate}\n " +
+                $"AlarmMessage: {AlarmMessage}\n " +
+                $"TimeToAlarm: {TimeToAlarm}\n " +
+                $"IsOutdated: {IsOutdated}");
         }
 
     }
