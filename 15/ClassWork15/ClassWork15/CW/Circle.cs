@@ -16,13 +16,17 @@ namespace CW
 			return operation(_radius);
 		}
 
-		public double Calculate(double radius)
+		public double CalculatePerimetr(double radius)
 		{
 			return 2* Math.PI * radius;
 		
 		}
+		public double CalculateSqware(double radius)
+		{
+			return Math.PI * radius * radius;
 
-		double S = Math.PI * radius * radius;
+		}
+
 
 	}
 }
