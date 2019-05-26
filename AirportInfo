@@ -2,13 +2,13 @@ CREATE TABLE dbo.DepartureBoard
 (
    Flight   	 [nchar](10) NOT NULL,
    DepartureСity      [nchar](50)  NOT NULL,
-   DepartureCountry  [NVARCHAR](50)  NOT NULL,
-   ArrivalCity     [NVARCHAR](50)  NOT NULL,
-   ArrivalCountry [NVARCHAR](50)  NOT NULL,
+   DepartureCountry  [nchar](50)  NOT NULL,
+   ArrivalCity     [nchar](50)  NOT NULL,
+   ArrivalCountry [nchar](50)  NOT NULL,
    DepartureTime [datetimeoffset](0)  NOT NULL,
    ArrivalTime [datetimeoffset](0)  NOT NULL,
-   Airline [NVARCHAR](20)  NOT NULL,
-   Airplane [NVARCHAR](10)  NOT NULL,
+   Airline [nchar](20)  NOT NULL,
+   Airplane [nchar](10)  NOT NULL,
 );
 
 INSERT INTO dbo.DepartureBoard (
