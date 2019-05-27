@@ -1,3 +1,5 @@
+CREATE DATABASE AirportInfo
+
 CREATE TABLE dbo.DepartureBoard
 (
    Flight   	 [nchar](10) NOT NULL,
@@ -27,4 +29,4 @@ VALUES ('B6 935', 'New York','USA', 'Moscow', 'Russia','2019-05-26 12:32:10 -04:
 
 SELECT * FROM dbo.DepartureBoard
 
-DROP TABLE dbo.DepartureBoard
+DROP DATABASE AirportInfo
